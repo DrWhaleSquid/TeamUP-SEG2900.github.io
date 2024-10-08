@@ -1,31 +1,51 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* Center the loader */
-#loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  margin: -76px 0 0 -76px;
-  border: 16px solid #f3f3f3;
+/* DOT */
+
+#dot {
+  height: 100px;
+  width: 100px;
+  background-color: #Ee6730;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  -webkit-animation: bounce 1s linear infinite;
+  animation: bounce 1s linear infinite;
+}
+#basketballstripe {
+	height:100px;
+    width:100px;
+    
+    
 }
 
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+
+@keyframes bounce {
+	/* 0S*/
+  0% {top:50%; rotate(0dg) }
+  	/* 0.10S*/
+  10% {top:52% }
+  	/* 0.20S*/
+  20% {top:55% }
+  	/* 0.30S*/
+  30% {top 60% }
+	/* 0.40S*/
+  40% {top:65%; height: 100px; width: 100px;}
+	/* 0.50S*/
+  50% {top:75%;height: 50px; width: 125px;}
+  
+   /* 0.90S*/
+  90% {top:50% }
+
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@-webkit-keyframes bounce {
+  0% { transform: rotate(0deg);background-color: orange; }
 }
 
 /* Add animation to "page content" */
@@ -52,10 +72,17 @@
   text-align: center;
 }
 </style>
+
 </head>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+</div>
+
+
 <body onload="myFunction()" style="margin:0;">
 
-<div id="loader"></div>
+<div id="dot"> </div>
 
 <div style="display:none;" id="myDiv" class="animate-bottom">
   <h2>Sorry!</h2>
@@ -66,11 +93,11 @@
 var myVar;
 
 function myFunction() {
-  myVar = setTimeout(showPage, 3000);
+  myVar = setTimeout(showPage, 10000);
 }
 
 function showPage() {
-  document.getElementById("loader").style.display = "none";
+  document.getElementById("dot").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
 </script>
