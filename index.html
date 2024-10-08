@@ -51,12 +51,12 @@
   height: 100px;
   width: 2px;
   background-color: black;
-  border-radius:40%;
+  border-radius:20%;
   border-style: solid;
   display: inline-block;
   position: absolute;
   top: 25%;
-  left: 60%;
+  left: 54%;
   -webkit-animation: stripebounce 1s linear infinite;
   animation: stripebounce 1s linear infinite;
 }
@@ -76,13 +76,13 @@
   30% {top 35% }
   
 	/* 0.40S*/
-  40% {top:40%; height: 100px; width: 2px;}
+  40% {top:40%; left:54%;height: 100px; width: 2px;}
   
 	/* 0.50S*/
-  50% {top:51%;height: 10px; width: 2px;}
+  50% {top:51%;left:55%; height: 6px; width: 2px;}
   
    /* 0.90S*/
-  100% {top:25%;width: 2px; }
+  100% {top:25%;left:54%;width: 2px; }
 
 }
 /* DUST PARTICLES*/
@@ -98,10 +98,26 @@
   display: inline-block;
   opacity: 0;
   top: 55%;
-  left: 55%;
+  left: 65%;
   -webkit-animation: dust_1 1s linear infinite;
   animation: dust_1 1s linear infinite;
 }
+
+/* DUST 1 */
+@keyframes dust_1 {
+
+	/* 0.50S*/
+  50%{opacity: 0}
+  
+  	/* 0.51S*/
+  51% {opacity: 0.75}
+  
+  	/* 1S*/
+  100% {top:50%;left:35%; opacity: 0}
+
+
+}
+
   #dust2 {
   position: absolute;
   width: 5px;
@@ -118,7 +134,20 @@
   -webkit-animation: dust_2 1s linear infinite;
   animation: dust_2 1s linear infinite;
 }
+  /* DUST 2 */
+@keyframes dust_2 {
 
+	/* 0.50S*/
+  50%{opacity: 0}
+  
+  	/* 0.51S*/
+  51% {opacity: 0.75}
+  
+  	/* 1S*/
+  100% {top:35%;left:45%; opacity: 0}
+
+
+}
 /* SHADOW*/
 #shadow {
   position: absolute;
@@ -131,8 +160,8 @@
   border-width: 2px;
   display: inline-block;
   opacity: 0.75;
-  top: 55%;
-  left: 48%;
+  top: 50%;
+  left: 49%;
   -webkit-animation: shadow 1s linear infinite;
   animation: shadow 1s linear infinite;
 }
@@ -155,35 +184,8 @@
 
 
 
-/* DUST 1 */
-@keyframes dust_1 {
-
-	/* 0.50S*/
-  50%{opacity: 0}
   
-  	/* 0.51S*/
-  51% {opacity: 0.75}
-  
-  	/* 1S*/
-  100% {top:50%;left:35%; opacity: 0}
 
-
-}
-  
-  /* DUST 2 */
-@keyframes dust_2 {
-
-	/* 0.50S*/
-  50%{opacity: 0}
-  
-  	/* 0.51S*/
-  51% {opacity: 0.75}
-  
-  	/* 1S*/
-  100% {top:65%;left:45%; opacity: 0}
-
-
-}
   
 
 
