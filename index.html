@@ -1,31 +1,152 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* DOT */
-
-#dot {
+/* BASKETBALL */
+#basketball {
   height: 100px;
   width: 100px;
   background-color: #Ee6730;
-  border-radius: 50%;
+  border-radius:100%;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
   display: inline-block;
   position: absolute;
-  top: 50%;
-  left: 25%;
+  top: 25%;
+  left: 50%;
   -webkit-animation: bounce 1s linear infinite;
   animation: bounce 1s linear infinite;
 }
-#basketballstripe {
-	height:100px;
-    width:100px;
-    
-    
+
+/* DUST PARTICLES*/
+#dust {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #CECECE;
+  border-width: 2px;
+  display: inline-block;
+  opacity: 0;
+  top: 55%;
+  left: 55%;
+  -webkit-animation: dust_1 1s linear infinite;
+  animation: dust_1 1s linear infinite;
+}
+  #dust2 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #CECECE;
+  border-width: 2px;
+  display: inline-block;
+  opacity: 0;
+  top: 55%;
+  left: 55%;
+  -webkit-animation: dust_2 1s linear infinite;
+  animation: dust_2 1s linear infinite;
+}
+
+/* SHADOW*/
+#shadow {
+  position: absolute;
+  width: 125px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #474747;
+  border-width: 2px;
+  display: inline-block;
+  opacity: 0.75;
+  top: 55%;
+  left: 48%;
+  -webkit-animation: shadow 1s linear infinite;
+  animation: shadow 1s linear infinite;
 }
 
 
+
+/* Shadow Bounce*/
+@keyframes shadow {
+
+	/* 0.1S*/
+  10% {height:15px;}
+
+  	/* 0.2S*/
+  20% {height:25px;}
+  
+	/* 0.5S*/
+  50% {height:50px; width: 145px}
+}
+
+  
+/* BasketBall Bounce*/
 @keyframes bounce {
+
+	/* 0S*/
+  0% {top:25%; rotate(0dg) }
+  	/* 0.10S*/
+  10% {top:27% }
+  
+  	/* 0.20S*/
+  20% {top:30% }
+  
+  	/* 0.30S*/
+  30% {top 35% }
+  
+	/* 0.40S*/
+  40% {top:40%; height: 100px; width: 100px;}
+  
+	/* 0.50S*/
+  50% {top:50%;height: 50px; width: 125px;}
+  
+   /* 0.90S*/
+  90% {top:25% }
+
+}
+
+/* DUST 1 */
+@keyframes dust_1 {
+
+	/* 0.50S*/
+  50%{opacity: 0}
+  
+  	/* 0.51S*/
+  51% {opacity: 0.75}
+  
+  	/* 1S*/
+  100% {top:50%;left:35%; opacity: 0}
+
+
+}
+  
+  /* DUST 2 */
+@keyframes dust_2 {
+
+	/* 0.50S*/
+  50%{opacity: 0}
+  
+  	/* 0.51S*/
+  51% {opacity: 0.75}
+  
+  	/* 1S*/
+  100% {top:65%;left:45%; opacity: 0}
+
+
+}
+  
+
+
+
+
+-webkit-@keyframes bounce {
 	/* 0S*/
   0% {top:50%; rotate(0dg) }
   	/* 0.10S*/
@@ -42,10 +163,6 @@
    /* 0.90S*/
   90% {top:50% }
 
-}
-
-@-webkit-keyframes bounce {
-  0% { transform: rotate(0deg);background-color: orange; }
 }
 
 /* Add animation to "page content" */
@@ -71,18 +188,27 @@
   display: none;
   text-align: center;
 }
+body{
+background-color:#EEEEEE
+}
 </style>
 
 </head>
 
-<div style="text-align:center">
-  <span class="dot"></span>
-</div>
 
 
-<body onload="myFunction()" style="margin:0;">
 
-<div id="dot"> </div>
+<body onload="myFunction()" style="margin:0">
+
+<div id="dust"> </div>
+
+<div id="shadow"> </div>
+<div id="basketball"> </div>
+  
+    <div id="dust2"> </div>
+
+
+
 
 <div style="display:none;" id="myDiv" class="animate-bottom">
   <h2>Sorry!</h2>
@@ -93,11 +219,12 @@
 var myVar;
 
 function myFunction() {
-  myVar = setTimeout(showPage, 10000);
+ myVar = setTimeout(showPage, 1000);
 }
 
 function showPage() {
-  document.getElementById("dot").style.display = "none";
+  document.getElementById("basketball").style.display = "none";
+  document.getElementById("dust").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
 </script>
